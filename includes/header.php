@@ -1,3 +1,7 @@
+<?php
+    include 'includes/session.php';
+?>
+
 <!doctype html>
 <html lang="en">
     <head>
@@ -27,7 +31,19 @@
                     <a class="nav-link" href="viewrecords.php">View Attendees</a>
                     
                 </div>
+                
+                </div>
+                <div class="navbar-nav justify-content-end">
+                <?php 
+                    if(!isset($_SESSION['userid'])){
+                ?>
+                    <a class="nav-link" aria-current="page" href="login.php">Login</a>
+                    <?php } else { ?>
+                    <a class="nav-link" aria-current="page" href="#"><span>Hello <?php echo $_SESSION['username'] ?></span></a>
+                    <a class="nav-link" aria-current="page" href="logout.php">Logout</a>
+                    <?php } ?>
                 </div>
             </div>
-</nav>
+            
+        </nav>
 <br/>
