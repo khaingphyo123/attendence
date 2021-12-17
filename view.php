@@ -1,6 +1,7 @@
 <?php 
     $title='View Records';
     require_once 'includes/header.php';
+    require_once 'includes/auth_check.php';
     require_once 'database/conn.php';
     
     if(!isset($_GET['id']))
@@ -13,6 +14,8 @@
         $result=$crud->getAttendeeDetails($id);
     
 ?>
+    <img src="<?php echo empty($result['avatar_path']) ? "uploads/love.png" : $result['avatar_path'] ; ?>" 
+    class="rounded-circle" style="width: 20%; height: 20%" />
     <div class="card" style="width: 18rem;">
         <div class="card-body">
             <h5 class="card-title"><?php echo $result['firstname'].' '.$result['lastname']; ?></h5>

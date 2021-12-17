@@ -7,7 +7,7 @@
     ?>
     <h1 class="text-center">Registration</h1>
     <!--form method="get" action="success.php"-->
-    <form method="post" action="success.php">
+    <form method="post" action="success.php" enctype="multipart/form-data">
         <div class="mb-3">
             <label for="firstname" class="form-label">First Name</label>
             <input required type="text" class="form-control" id="firstname" name="firstname">
@@ -33,11 +33,20 @@
             <input required type="email" class="form-control" id="Email1" name="Email1" aria-describedby="emailHelp" placeholder="someone@gmail.com">
             <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
         </div>
+        <br/>
         <div class="mb-3">
             <label for="contact" class="form-label">Contact Number</label>
             <input required type="text" class="form-control" id="contact" name="contact" aria-describedby="phoneHelp" placeholder="+959783674467">
             <div id="phoneHelp" class="form-text">We'll never share your contact with anyone else.</div>
         </div>
+        <br/>
+        <div class="input-group mb-3">
+            <input type="file" accept="image/*" class="form-control" id="avatar" name="avatar">
+            <label class="input-group-text" for="avatar">Browse</label>
+            
+        </div>
+        
+        <br/>
         <div class="d-grid gap-2">
         <button type="submit" name="submit" class="btn btn-primary btn-block">Submit</button>
         </div>
